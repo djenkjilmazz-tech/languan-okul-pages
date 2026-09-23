@@ -109,6 +109,7 @@ göstermek içindir.
 
 - Birincil: **Eğitim**
 - İkincil: (boş bırakılabilir)
+- **"Made for Kids" bölümü işaretlenmeyecek** (karar 2026-09-23, aşağıda).
 
 ## Yaş sınırı
 
@@ -116,11 +117,12 @@ Bütün soruların yanıtı **Yok/Hiçbiri** → **4+**.
 Uygulamada şiddet, korku, kumar, cinsellik, alkol/tütün, kullanıcı içeriği, sohbet,
 dış bağlantı ve reklam yoktur.
 
-**Dikkat — Kids kategorisi kararı:** Uygulama çocuklara yöneliktir ama ASC'de
-"Made for Kids" kategorisine koymak zorunlu değildir. Kids kategorisi seçilirse
-üçüncü taraf analitik/reklam yasağı (bizde zaten yok) ve dış bağlantılar için
-ebeveyn kapısı şartı gelir. Uygulamada dış bağlantı olmadığı için iki seçenek de
-uygundur; kararı siz verin.
+**KARAR (2026-09-23): Kids kategorisi KULLANILMAYACAK.**
+ASC'de "Made for Kids" / "Çocuklar İçin Yapıldı" bölümü işaretlenmez; uygulama
+standart **Eğitim** kategorisinde, **4+** yaş sınırıyla yayımlanır.
+Bu kararın bir şey kaybettirmediğini not edelim: Kids kategorisinin getirdiği
+kısıtlar (üçüncü taraf analitik/reklam yasağı, dış bağlantılarda ebeveyn kapısı)
+uygulamada zaten karşılanıyor — analitik, reklam ve dış bağlantı yok.
 
 ## Gizlilik beyanı (App Privacy)
 
@@ -145,6 +147,7 @@ için üretildi.
 - [x] 6.9" ekran görüntüleri (1320×2868, 6 adet)
 - [x] Sürüm 1.0.0, ihracat uyumluluğu NO
 - [x] 1024×1024 uygulama simgesi (`ikon.png`)
+- [x] Kategori kararı: Eğitim, Kids bölümü YOK
 - [ ] ASC'de uygulama kaydının oluşturulması
 - [ ] Arşivleme ve yükleme *(sizin onayınızla)*
 - [ ] Metinlerin ASC'ye girilmesi
