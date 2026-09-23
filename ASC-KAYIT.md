@@ -148,7 +148,20 @@ için üretildi.
 - [x] Sürüm 1.0.0, ihracat uyumluluğu NO
 - [x] 1024×1024 uygulama simgesi (`ikon.png`)
 - [x] Kategori kararı: Eğitim, Kids bölümü YOK
-- [ ] ASC'de uygulama kaydının oluşturulması
-- [ ] Arşivleme ve yükleme *(sizin onayınızla)*
-- [ ] Metinlerin ASC'ye girilmesi
+- [x] ASC'de uygulama kaydı — **6815154007**, sürüm 1.0 `PREPARE_FOR_SUBMISSION`
+- [x] Bundle ID portalda kayıtlı — `6W598LGXUD`
+- [x] Metinler API'den girildi (alt başlık, açıklama, anahtar kelime, tanıtım, URL'ler)
+- [x] Birincil kategori: Eğitim
+- [x] Yaş sınırı beyanı: 25 alan, hepsi yok/hayır → 4+
+- [x] 6 ekran görüntüsü yüklendi (APP_IPHONE_67, hepsi COMPLETE)
+- [ ] **App Privacy (Data Not Collected)** — API'de yok, ASC arayüzünden yapılmalı
+- [ ] Arşivleme ve yükleme *(sizin onayınızla)* — sürüme henüz derleme bağlı değil
 - [ ] İncelemeye gönderme *(sizin onayınızla)*
+
+## API'de yapılamayanlar (ölçülerek bulundu)
+
+| İş | Sonuç |
+|---|---|
+| Uygulama kaydı açma | `403 — apps does not allow CREATE`; yalnız web arayüzü |
+| App Privacy beyanı | Uygulamanın ilişkileri arasında gizlilik ucu yok; yalnız web arayüzü |
+| "Yenilikler" metni | `409 — whatsNew cannot be edited at this time`; ilk sürümde alan yok |
