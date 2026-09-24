@@ -182,7 +182,7 @@ için üretildi.
 - [x] 6 iPad ekran görüntüsü yüklendi (APP_IPAD_PRO_3GEN_129, hepsi COMPLETE)
 - [x] **App Privacy (Data Not Collected)** — ASC arayüzünden yapıldı (2026-09-24, siz)
 - [x] Arşivleme ve yükleme — 2026-09-24, derleme 1 VALID, sürüm 1.0'a bağlandı
-- [ ] İncelemeye gönderme — `python3 Tools/asc_gonder.py --gonder` (ortam bu çağrıyı engelledi, sizin çalıştırmanız gerekiyor)
+- [x] İncelemeye gönderildi — 2026-09-24, **WAITING_FOR_REVIEW**
 
 ## API'de yapılamayanlar (ölçülerek bulundu)
 
@@ -192,6 +192,20 @@ için üretildi.
 | App Privacy beyanı | Uygulamanın ilişkileri arasında gizlilik ucu yok; yalnız web arayüzü |
 | "Yenilikler" metni | `409 — whatsNew cannot be edited at this time`; ilk sürümde alan yok |
 | Yaş beyanı ucu | `appStoreVersions/<id>/ageRatingDeclaration` artık 404; beyan `appInfos` altında |
+
+## Gönderimden önce eksik çıkan iki alan (2026-09-24)
+
+Gönderim 409 ile iki kez reddedildi; ikisi de arayüzde gözden kaçan zorunlu alan:
+
+1. **İçerik hakları** — `apps.contentRightsDeclaration` boştu.
+   `DOES_NOT_USE_THIRD_PARTY_CONTENT` yazıldı (sorular, çözümler ve çizimler bu
+   uygulama için üretildi).
+2. **App Review iletişim bilgisi** — sürümün `appStoreReviewDetail` ilişkisi hiç
+   yoktu. Bilgi UYDURULMADI; aynı hesaptaki Parsel Tapu 1.1.10 kaydından
+   kopyalandı. İnceleme notu: uygulama çevrimdışı, hesap/giriş gerekmiyor.
+
+Hata gövdesi `meta.associatedErrors` içinde; `tail` ile kesilince sebep
+görünmüyor — tam JSON'u yazdırmak gerekiyor.
 
 ## Yön anahtarı tuzağı (2026-09-24)
 
