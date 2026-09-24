@@ -89,6 +89,12 @@ Bu uygulama Millî Eğitim Bakanlığı, herhangi bir okul, yayınevi ya da öze
 kurumu ile bağlantılı değildir ve onlar tarafından onaylanmamıştır. Müfredat
 kazanımlarına yapılan atıflar, içeriğin hangi öğrenme çıktısına karşılık geldiğini
 göstermek içindir.
+
+KULLANIM ŞARTLARI VE GİZLİLİK
+
+Kullanım şartları: https://djenkjilmazz-tech.github.io/languan-okul-pages/kullanim-sartlari.html
+Gizlilik politikası: https://djenkjilmazz-tech.github.io/languan-okul-pages/gizlilik.html
+Uygulamada satın alma ve abonelik yoktur; Apple'ın standart son kullanıcı lisans sözleşmesi geçerlidir.
 ```
 
 ## Yenilikler (1.0.0)
