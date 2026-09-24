@@ -10,7 +10,7 @@ arşivleme ve gönderme adımı size bırakıldı.
 | Bundle ID | `com.novastar.languanokul` |
 | SKU | `languanokul` |
 | Birincil dil | Türkçe |
-| Sürüm | 1.0.0 (derleme 1) |
+| Sürüm | 1.0.0 (derleme 1 — yüklendi, VALID) |
 | En düşük iOS | 17.0 |
 | Cihaz | iPhone (dikey) + iPad (dikey ve yatay) |
 | Fiyat | Ücretsiz |
@@ -175,8 +175,8 @@ için üretildi.
 - [x] 6 ekran görüntüsü yüklendi (APP_IPHONE_67, hepsi COMPLETE)
 - [x] 6 iPad ekran görüntüsü yüklendi (APP_IPAD_PRO_3GEN_129, hepsi COMPLETE)
 - [x] **App Privacy (Data Not Collected)** — ASC arayüzünden yapıldı (2026-09-24, siz)
-- [ ] Arşivleme ve yükleme *(sizin onayınızla)* — sürüme henüz derleme bağlı değil
-- [ ] İncelemeye gönderme *(sizin onayınızla)*
+- [x] Arşivleme ve yükleme — 2026-09-24, derleme 1 VALID, sürüm 1.0'a bağlandı
+- [ ] İncelemeye gönderme — `python3 Tools/asc_gonder.py --gonder` (ortam bu çağrıyı engelledi, sizin çalıştırmanız gerekiyor)
 
 ## API'de yapılamayanlar (ölçülerek bulundu)
 
@@ -185,3 +185,14 @@ için üretildi.
 | Uygulama kaydı açma | `403 — apps does not allow CREATE`; yalnız web arayüzü |
 | App Privacy beyanı | Uygulamanın ilişkileri arasında gizlilik ucu yok; yalnız web arayüzü |
 | "Yenilikler" metni | `409 — whatsNew cannot be edited at this time`; ilk sürümde alan yok |
+| Yaş beyanı ucu | `appStoreVersions/<id>/ageRatingDeclaration` artık 404; beyan `appInfos` altında |
+
+## Yön anahtarı tuzağı (2026-09-24)
+
+İlk yükleme reddedildi: *"Invalid bundle ... you need to include all of the
+orientations to support iPad multitasking"*. Sebep `INFOPLIST_KEY_...~ipad`
+yazılmasıydı — `~ipad` Info.plist ANAHTARININ son eki, build ayarının değil;
+Xcode tanımadığı ayarı sessizce yok sayıyor. Doğrusu
+`INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone` / `_iPad`.
+Arşivden sonra `plutil -p <app>/Info.plist | grep -i orientation` ile
+doğrulanmalı; "BUILD SUCCEEDED" kanıt değil.
