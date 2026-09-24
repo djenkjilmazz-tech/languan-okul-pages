@@ -12,10 +12,10 @@ arşivleme ve gönderme adımı size bırakıldı.
 | Birincil dil | Türkçe |
 | Sürüm | 1.0.0 (derleme 1) |
 | En düşük iOS | 17.0 |
-| Cihaz | Yalnız iPhone, dikey |
+| Cihaz | iPhone (dikey) + iPad (dikey ve yatay) |
 | Fiyat | Ücretsiz |
 | Uygulama içi satın alma | Yok |
-| Ekran görüntüsü | 6.9" (1320×2868) — 6 adet, `ekran-goruntuleri/` |
+| Ekran görüntüsü | 6.9" iPhone (1320×2868) 6 adet `ekran-goruntuleri/`<br>13" iPad (2064×2752) 6 adet `ekran-goruntuleri-ipad/` |
 
 ## Ad ve alt başlık
 
@@ -136,6 +136,24 @@ cihazda kalıyor. Takip (tracking) yapılmadığı için ATT izni istenmiyor.
 `ITSAppUsesNonExemptEncryption = NO` Info.plist'e yazıldı (derlemede doğrulandı),
 yükleme sırasında soru sorulmayacak.
 
+## iPad desteği (2026-09-24)
+
+`TARGETED_DEVICE_FAMILY: "1,2"` — uygulama artık iPhone ve iPad'de çalışıyor.
+
+**Yön:** iPhone yalnız dikey kaldı (telefonu yatay tutunca klavye açılınca soru
+ekranı kullanılamaz hâle geliyor); iPad'de dört yön de açık — tablet klavye
+kılıfında yatay tutuluyor ve dönünce boş ekran göstermek kabul edilmez.
+Info.plist'te `UISupportedInterfaceOrientations~ipad` ile ayrıldı.
+
+**Yerleşim:** ekranlar yeniden yazılmadı. Telefon düzeni korunup içerik
+`Gorunum/Duzen.swift` içindeki `.okunurGenislik()` ile 680 pt'de ortalanıyor;
+yoksa 13" yatayda bir satıra 180'den fazla karakter düşüyordu. 16 yerde
+uygulandı (kaydırma kökleri + soru ekranlarının tam sütunu).
+
+**Ölçüm:** Simulator.app bu Xcode kurulumunda bulunmadığı için cihaz menüden
+döndürülemedi; yatay yerleşim, kök görünüm geçici olarak 1366×1024 pt'ye
+zorlanıp küçültülerek çizilerek görüldü ve ölçümden sonra o kod silindi.
+
 ## İçerik hakları
 
 Uygulama üçüncü taraf içerik içermiyor; sorular, çözümler ve çizimler bu uygulama
@@ -144,7 +162,8 @@ için üretildi.
 ## Gönderim öncesi kontrol listesi
 
 - [x] Gizlilik, destek, pazarlama ve kullanım şartları sayfaları yayında (7 URL 200)
-- [x] 6.9" ekran görüntüleri (1320×2868, 6 adet)
+- [x] 6.9" iPhone ekran görüntüleri (1320×2868, 6 adet)
+- [x] 13" iPad ekran görüntüleri (2064×2752, 6 adet)
 - [x] Sürüm 1.0.0, ihracat uyumluluğu NO
 - [x] 1024×1024 uygulama simgesi (`ikon.png`)
 - [x] Kategori kararı: Eğitim, Kids bölümü YOK
@@ -154,7 +173,8 @@ için üretildi.
 - [x] Birincil kategori: Eğitim
 - [x] Yaş sınırı beyanı: 25 alan, hepsi yok/hayır → 4+
 - [x] 6 ekran görüntüsü yüklendi (APP_IPHONE_67, hepsi COMPLETE)
-- [ ] **App Privacy (Data Not Collected)** — API'de yok, ASC arayüzünden yapılmalı
+- [x] 6 iPad ekran görüntüsü yüklendi (APP_IPAD_PRO_3GEN_129, hepsi COMPLETE)
+- [x] **App Privacy (Data Not Collected)** — ASC arayüzünden yapıldı (2026-09-24, siz)
 - [ ] Arşivleme ve yükleme *(sizin onayınızla)* — sürüme henüz derleme bağlı değil
 - [ ] İncelemeye gönderme *(sizin onayınızla)*
 
